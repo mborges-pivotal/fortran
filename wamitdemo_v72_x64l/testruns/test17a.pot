@@ -1,0 +1,16 @@
+TEST17 cylinder with moonpool, NPATCH=3
+ -1.
+ 0           0               IRAD, IDIFF
+  NPERGROUP=3
+  -11
+   0.10 0.05    (end of group 1, K = 0.10 to 0.60)
+   -40
+   0.61 0.01    (end of group 2, K = 0.61 to 1.00)
+   -10
+    1.05 0.05   (end of group 3, K = 1.05 to 1.50)
+ 1                             NBETA (array BETA follows)
+ 180.
+ 1                            NBODY
+test17a.gdf
+ 0. 0. 0. 0.                  XBODY
+ 1  0  1  0  1  0             IMODE(1-6)

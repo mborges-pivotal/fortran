@@ -1,0 +1,6 @@
+test03.csf higher-order csf file, circular outer boundary
+1 ILOWHICSF
+1 1 ISX ISY
+0 0 1. NPATCSF ICDEF PSZCSF   auto as per user manual section 11.5, page 11-12
+2.0 2.0 RADIUS, DEPTH
+0 NPART

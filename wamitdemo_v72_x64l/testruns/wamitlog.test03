@@ -1,0 +1,23 @@
+
+WAMITLOG.TXT file from WAMIT run:  04-Mar-2017 04:50:59
+
+ Input file config.wam
+! generic configuration file:  config.wam
+ RAMGBMAX=0.5
+ NCPU=1
+ USERID_PATH=\wamitv7   (directory for *.exe, *.dll, and userid.wam)
+
+
+ Input file test03.cfg
+! TEST03.CFG  Cylinder, R=T=1, ILOWHI=0, ISOR=1
+ ilowgdf=1
+ ipltdat=5
+ ISOR=1
+ ISOLVE=0
+ ISCATT=0
+ ILOG=0
+ IRR=0
+ MONITR=0
+ NUMHDR=1
+
+POTEN run started:  04-Mar-2017 04:50:59

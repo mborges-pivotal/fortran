@@ -1,0 +1,8 @@
+test04.csf  control surface for test04a in channel
+  1             ILOWHICSF
+  1   0         ISX  ISY
+  1   0  10.0   NPATCH  ICDEF  PSZCSF
+   100.0       -50.0    -15.0
+   100.0        30.0    -15.0
+   100.0        30.0      0.0
+   100.0       -50.0      0.0    

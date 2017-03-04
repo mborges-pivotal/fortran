@@ -1,0 +1,13 @@
+ TEST05a.FRC -- array of field points
+   1   1   1   1   0   3   -1   1   1     (IOPTN(1-9)
+  1.0                             (RHO -- fluid density)
+test05c.frc                       (frc file for body 1)
+test05s.frc                       (frc file for body 2)
+  0                               (NBETAH)
+ 0                                (NFIELD -- no individual field points)
+ 1                                (NFIELD_ARRAYS -- number of arrays)
+ 0                                (Array is in exterior fluid domain)
+ 11 -2.5   0.5                    (NFX, X1, DELX)
+ 10 -1.5   0.5                    (NFY, Y1, DELY)
+  1  0.0   0.0                    (NFZ, Z1, DELZ)
+ 

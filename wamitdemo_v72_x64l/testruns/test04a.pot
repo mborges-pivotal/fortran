@@ -1,0 +1,11 @@
+TEST04a.POT -- Barge in channel 80x15m, off-center 10m
+ 20.       HBOT
+   0  0                          IRAD,IDIFF
+3
+ 6.  7.  8.
+ 1
+ 0.0
+   1                          NBODY
+ test04.gdf
+ 0. 10. 0. 0.
+  1  0  1  0  1  0

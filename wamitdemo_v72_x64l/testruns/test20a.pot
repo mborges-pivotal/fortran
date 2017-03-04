@@ -1,0 +1,23 @@
+ MultiSurf barge in channel
+  15.0
+  0     0                     IRAD, IDIFF
+  -7                          NPER 
+  0.02 0.02                   Coarse array of wavenumbers
+  1                           NBETA (array BETA follows)
+  180. 
+  1                           NBODY
+  test20.gdf
+  0.0  0.0  0.0  0.0          XBODY
+  1  0  1  0  1  0            IMODE(1-6)
+ 
+ npergroup=5  !  group of wavenumbers used in Figure 12.2
+     -60                        
+     .001   .001
+     -50
+     .0601  .0001   
+     -35
+     .066   .001
+     -190
+     .1010  .0001  
+     -20
+     .121   .001

@@ -1,0 +1,75 @@
+
+WAMITLOG.TXT file from WAMIT run:  04-Mar-2017 04:53:09
+
+ Input file config.wam
+! generic configuration file:  config.wam
+ RAMGBMAX=0.5
+ NCPU=1
+ USERID_PATH=\wamitv7   (directory for *.exe, *.dll, and userid.wam)
+
+
+ Input file test01.cfg
+! TEST01.CFG -- cylinder R=1, T=0.5, ILOWHI=0, IRR=0
+ ipltdat=1
+ ISOR=1       (omit ISOR in POT file, include source formulation)
+ ISOLVE=0     (use iterative solver)
+ ISCATT=0     (solve for total diffraction potential, not scattering)
+ ILOG=1       (omit ILOG in POT file, integrate log singularity)
+ IRR=0        (omit IRR in POT file, no irregular-frequency removal)
+ MONITR=0     (do not write FORCE output data to monitor)
+ NUMHDR=1     (write headers to numeric output files)
+
+
+POTEN run started:  04-Mar-2017 04:53:09
+
+ Input file test01.pot
+TEST01.POT -- cylinder R=1, T=0.5, ILOWHI=0, IRR=0, CHANNEL WIDTH=4.0
+ -1.  4.0     HBOT, CHANNEL WIDTH
+   1   1                          IRAD,IDIFF
+ 2                           NPER (array PER follows)
+ 8.971402 2.006403            PER
+ 1                            NBETA (array BETA follows)
+ 0.                           BETA
+   1                          NBODY
+ test01.gdf
+ 0. 0. 0. 0.                HBOT, XBODY(1-4)
+  1  1  1  1  1  1               IMODE(1-6)
+
+ First    10 lines of input file test01.gdf
+TEST01.GDF  --  circular cylinder, R=1, T=0.5, ILOWHI=0
+    1.000000       9.806650     ULEN, GRAV
+            1           1       ISX, ISY
+          256                   NEQN
+   0.0000000E+00  0.0000000E+00 -0.5000000
+   0.0000000E+00  0.0000000E+00 -0.5000000
+   0.1243981      1.2252143E-02 -0.5000000
+   0.1250000      0.0000000E+00 -0.5000000
+   0.1250000      0.0000000E+00 -0.5000000
+   0.1243981      1.2252143E-02 -0.5000000
+
+
+ Number of processors used :   1
+
+ Estimated RAM used :  1.1E-02 Gigabytes
+
+  POTEN module run completed
+
+POTEN run completed:  04-Mar-2017 04:53:13
+
+FORCE run started:  04-Mar-2017 04:53:13
+
+ Input file test01.frc
+ TEST01.FRC  Circular cylinder, ILOWHI=0, IRR=0
+   1   1   1   1   0   3   0   2   1
+ 0.000000                                    VCG
+ 1.000000      .0000000      .0000000
+ .0000000      1.000000      .0000000
+ .0000000      .0000000      1.000000        XPRDCT
+ 0                                           NBETAH
+ 2                                           NFIELD
+ 1.5  0.  0.
+ 1.5  0. -0.5                                XFIELD
+
+FORCE run completed:  04-Mar-2017 04:53:13
+
+  WAMIT run completed
