@@ -53,6 +53,7 @@ $ docker run --rm -i -t -v $(pwd):/source nacyot/fortran-gfortran:apt ./hello_wo
 # Run locally
 ```
 docker run -d -p 8080:8080 --rm mborges/fortran
+docker run --rm -i -t  mborges/fortran /bin/bash
 ```
 
 # Deploy on PCF

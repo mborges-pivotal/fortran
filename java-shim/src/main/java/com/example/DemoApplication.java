@@ -18,16 +18,16 @@ public class DemoApplication {
 	}
 
 	@RequestMapping("/fortran")
-	public String greeting(@RequestParam(value="name", defaultValue="World") String name) throws Exception {
-	  return runExec();
+	public String procCall(@RequestParam(value="name", defaultValue="hello_world") String name) throws Exception {
+	  return runExec(name);
 	}
 
-  private String runExec() throws Exception {
+  private String runExec(String name) throws Exception {
 
-		String program = "/source/hello_world";
+		String program = "/source/";
 
 		//Process proc = new ProcessBuilder("echo", "hello").start();
-		Process proc = new ProcessBuilder(program, "hello").start();
+		Process proc = new ProcessBuilder(program+name, "hello").start();
 
 		BufferedReader stdInput = new BufferedReader(new
 		     InputStreamReader(proc.getInputStream()));
