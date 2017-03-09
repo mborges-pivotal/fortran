@@ -3,7 +3,7 @@ MAINTAINER Daekwon Kim <propellerheaven@gmail.com>
 
 RUN apt-get update
 RUN apt-get install -y gfortran
-RUN apt-get install -y default-jre
+RUN apt-get install -y default-jdk
 
 # Set default WORKDIR
 WORKDIR /source
@@ -17,8 +17,10 @@ RUN gfortran -o allocatable /source/allocatable.f90
 RUN gfortran -o random_prb /source/random_prb.f90
 
 ADD run.sh /source
-ADD ./java-shim/target/demo-0.0.1-SNAPSHOT.jar /source/service.jar
 RUN chmod a+x run.sh
+
+ADD java-shim /source/java-shim
+RUN cd ./java-shim && ./mvnw package && cd .. && cp ./java-shim/target/java-shim-0.0.1-SNAPSHOT.jar /source/service.jar
 
 ADD wamitdemo_v72_x64l /source/wamitdemo_v72_x64l
 #RUN sh /source/INSTALL.sh

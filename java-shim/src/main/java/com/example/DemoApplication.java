@@ -18,22 +18,23 @@ public class DemoApplication {
 	}
 
 	@RequestMapping("/fortran")
-	public String procCall(@RequestParam(value="name", defaultValue="hello_world") String name) throws Exception {
-	  return runExec(name);
+	public String procCall(@RequestParam(value = "name", defaultValue = "hello_world") String name) throws Exception {
+		return "<pre>"+runExec(name)+"</pre>";
 	}
 
-  private String runExec(String name) throws Exception {
+	
+	////////////////////////////
+	// Helper Methods
+	////////////////////////////
+	
+	private String runExec(String name) throws Exception {
 
 		String program = "/source/";
 
-		//Process proc = new ProcessBuilder("echo", "hello").start();
-		Process proc = new ProcessBuilder(program+name, "hello").start();
+		Process proc = new ProcessBuilder(program + name, "hello").start();
 
-		BufferedReader stdInput = new BufferedReader(new
-		     InputStreamReader(proc.getInputStream()));
-
-		BufferedReader stdError = new BufferedReader(new
-		     InputStreamReader(proc.getErrorStream()));
+		BufferedReader stdInput = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+		BufferedReader stdError = new BufferedReader(new InputStreamReader(proc.getErrorStream()));
 
 		StringBuffer exeOut = new StringBuffer();
 
@@ -41,14 +42,15 @@ public class DemoApplication {
 		System.out.println("Here is the standard output of the command:\n");
 		String s = null;
 		while ((s = stdInput.readLine()) != null) {
-		    System.out.println(s);
-				exeOut.append(s);
+			System.out.println(s);
+			exeOut.append(s);
+			exeOut.append('\n');
 		}
 
 		// read any errors from the attempted command
 		System.out.println("Here is the standard error of the command (if any):\n");
 		while ((s = stdError.readLine()) != null) {
-		    System.out.println(s);
+			System.out.println(s);
 		}
 		return exeOut.toString();
 	}

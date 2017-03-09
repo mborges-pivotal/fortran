@@ -1,0 +1,40 @@
+---
+jobs:
+
+- name: build-artifact
+  public: true
+  serial: true
+  plan:
+  - get: source
+    resource: resource-fortran
+    trigger: true
+  - task: build
+    file: source/ci/tasks/build.yml
+
+- name: build-docker
+  public: true
+  serial: true
+  plan:
+  - get: source
+    resource: resource-fortran
+  - put: fortran-docker-image
+    params:
+      build: source
+
+##################################################
+# RESOURCES
+##################################################
+
+resources:
+- name: resource-fortran
+  type: git
+  source:
+    uri: https://github.com/mborges-pivotal/fortran.git
+
+- name: fortran-docker-image
+  type: docker-image
+  source:
+    email: {{docker-hub-email}}
+    username: {{docker-hub-username}}
+    password: {{docker-hub-password}}
+    repository: {{docker-hub-image}}
